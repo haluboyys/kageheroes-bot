@@ -1,0 +1,30 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "kageheroes-bot",
+  "main": "src/index.js",
+  "compatibility_date": "2026-01-01",
+  "vars": {
+    "GAME_SERVER": "1,2",
+    "GAME_VERSION": "2.6.1",
+    "GAME_HTTP_PORT": "80",
+    "TELEGRAM_CHAT_ID": "-100xxxxxxxxxx",
+    "TELEGRAM_THREAD_ID": "1"
+  },
+  "triggers": {
+    "crons": ["*/15 * * * *"]
+  },
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "ACCOUNT_COORDINATOR",
+        "class_name": "AccountCoordinator"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": ["AccountCoordinator"]
+    }
+  ]
+}

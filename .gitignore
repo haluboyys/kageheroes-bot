@@ -1,0 +1,8 @@
+.wrangler/
+.openidea/
+node_modules/
+.dev.vars
+.env
+.env.*
+.DS_Store
+wrangler.jsonc

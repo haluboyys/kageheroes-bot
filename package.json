@@ -1,0 +1,15 @@
+{
+  "name": "nh-bot-cloudflare",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "check": "for f in $(find src test -name '*.js'); do node --check \"$f\" || exit 1; done && npm test",
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
